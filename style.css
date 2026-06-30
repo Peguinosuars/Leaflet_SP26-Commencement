@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. 기본 초기화 및 기종별 화면 맞춤 (반응형 원천 차단)
+   1. 기본 초기화 및 기종별 화면 맞춤 (크기 제한 완전 해제)
    ========================================================================== */
 * {
     margin: 0;
@@ -21,10 +21,10 @@ body {
 .mobile-container {
     width: 100%;
     max-width: 430px; 
-    height: 100vh;
+    height: 100vh; /* 최외곽 틀만 폰 화면에 맞춤 */
     background-color: #ffffff;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory; /* 자석 스크롤 유지 */
+    scroll-snap-type: y mandatory; /* 각 학과/페이지 덩어리별 자석 효과 */
     box-shadow: 0 4px 25px rgba(0,0,0,0.05);
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -34,6 +34,343 @@ body {
     display: none;
 }
 
+/* ==========================================================================
+   2. 기본 콘텐츠 페이지 (커버, 교가, 식순 등 - 독립 덩어리)
+   ========================================================================== */
+.page {
+    padding: 60px 30px;
+    min-height: 100vh; /* height: 100vh를 없애서 폰 공간이 부족해도 절대 안 겹치게 수정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    scroll-snap-align: start; /* 덩어리 시작점에 자석 스냅 */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.line-divider {
+    width: 30px;
+    height: 0.5px;
+    background-color: #bbbbbb;
+    margin: 20px auto 40px auto;
+}
+
+/* 메인 커버 */
+.main-cover {
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.cover-image-wrapper {
+    height: 48vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-placeholder {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #999999;
+    border: 1px dashed #cccccc;
+    padding: 15px 30px;
+}
+
+.cover-content {
+    height: 52vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.institution {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.main-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #002c5b;
+}
+
+.semester {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: #c49a45;
+}
+
+.event-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    font-size: 0.85rem;
+    margin: 6px 0;
+    color: #444444;
+    letter-spacing: 1px;
+}
+
+/* 식순 리스트 */
+.order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.order-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.order-list .step {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #c49a45;
+    border-bottom: 1px solid #c49a45;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.order-list .text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.order-list .text small {
+    display: block;
+    color: #777777;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+/* 비전 / 미션 블록 */
+.text-block {
+    margin-bottom: 35px;
+}
+
+.block-title {
+    font-size: 1.1rem;
+    color: #002c5b;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.vision-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #444444;
+    font-style: italic;
+}
+
+/* Mission 텍스트 완벽 왼쪽 정렬 */
+.mission-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #444444;
+    margin-bottom: 14px;
+    text-align: left !important;
+}
+
+/* 교가 섹션 */
+.anthem-text-block {
+    padding: 10px 0;
+}
+
+.anthem-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #111111;
+    letter-spacing: 1px;
+}
+
+.anthem-text-block p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #444444;
+}
+
+.anthem-text-block .chorus {
+    margin-top: 10px;
+    color: #222222;
+}
+
+.sub-divider {
+    width: 15px;
+    margin: 25px auto;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   3. [해결] 대학원 및 학과별 명단 크기 제한 완전 해제 레이아웃
+   ========================================================================== */
+/* 높이 제한을 완벽하게 없앴습니다. 내용물(명단) 길이에 따라 화면이 유연하게 
+   아래로 늘어나기 때문에, 폰 화면 크기와 상관없이 절대 글자가 겹치지 않습니다. */
+.page.scrollable-dept {
+    height: auto !important;     /* 고정 높이 강제 해제 */
+    min-height: 100vh;          /* 최소 1페이지 분량 확보 */
+    padding: 60px 30px 80px 30px;     
+    display: block;             /* 순서대로 요소를 쌓아서 겹침 원천 차단 */
+    text-align: left;
+    scroll-snap-align: start;   /* 덩어리가 시작될 때 자석 효과 */
+    flex-shrink: 0;
+}
+
+/* 대분류 타이틀 색상 (SBU: 빨강, FIT: 파랑) */
+.page.scrollable-dept .sub-school.sbu-color {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #e11b22; /* SBU 빨간색 */
+    display: block;
+}
+
+.page.scrollable-dept .sub-school.fit-color {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #002c5b; /* FIT 파란색 */
+    display: block;
+}
+
+/* 학과 그룹 영역 */
+.page.scrollable-dept .dept-group {
+    margin-bottom: 35px;
+    width: 100%;
+    display: block;
+}
+
+/* 학과 이름 강조 (왼쪽 정렬 및 행간 확보) */
+.page.scrollable-dept .dept-title {
+    font-size: 1.15rem;
+    color: #111111;
+    font-weight: 600;
+    line-height: 1.5;           
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    display: block;             
+}
+
+/* 학과 영문 부연설명 (절대 안 겹치도록 독립 블록 및 마진 부여) */
+.page.scrollable-dept .dept-title span {
+    font-size: 0.8rem;
+    color: #666666;
+    font-style: italic;
+    display: block;             
+    margin-top: 6px;            
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.page.scrollable-dept .dept-sub-title {
+    font-size: 0.85rem;
+    color: #666666;
+    font-style: italic;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    display: block;
+}
+
+/* 명단 감싸는 영역 */
+.page.scrollable-dept .name-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 5px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. [원하는 정렬 완성] 이름(무조건 왼쪽) / 받은 상, 학위(무조건 오른쪽 끝)
+   ========================================================================== */
+.page.scrollable-dept .name-item {
+    font-size: 0.9rem;
+    color: #333333;
+    letter-spacing: 0.5px;
+    display: flex;                
+    justify-content: space-between; /* 양 끝으로 칼같이 정렬 */
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px dashed #f5f5f5; 
+    padding-bottom: 5px;
+}
+
+/* 이름 왼쪽 정렬 고정 */
+.page.scrollable-dept .name-item .student-name {
+    text-align: left !important;
+}
+
+/* 상 이름 및 우등학위(summa, magna, cum 등) 오른쪽 정렬 고정 */
+.page.scrollable-dept .name-item small {
+    font-size: 0.78rem;
+    font-weight: normal;
+    text-align: right !important; 
+    margin-left: auto;            
+    white-space: nowrap;          
+}
+
+/* 학위 종류별 디자인 색상 보존 */
+.page.scrollable-dept .name-item.summa { color: #b08332; font-weight: 600; }
+.page.scrollable-dept .name-item.summa-fit { color: #e11b22; font-weight: 600; }
+.page.scrollable-dept .name-item.magna { color: #34495e; font-weight: 600; }
+.page.scrollable-dept .name-item.cum { color: #555555; }
+
+/* ==========================================================================
+   5. 푸터 영역
+   ========================================================================== */
+.footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
+    width: 100%;
+}
+
+.web-url {
+    font-size: 0.8rem;
+    color: #666666;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #999999;
+    letter-spacing: 0.5px;
+}
 /* ==========================================================================
    2. 기본 콘텐츠 페이지 (커버, 교가, 식순 등)
    ========================================================================== */
