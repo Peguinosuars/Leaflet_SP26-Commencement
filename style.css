@@ -5,9 +5,9 @@
 }
 
 body {
-    background-color: #ecedf1;
-    font-family: 'Times New Roman', Times, serif;
-    color: #2b2b2b;
+    background-color: #f5f5f5;
+    font-family: 'Times New Roman', Times, serif, 'Noto Sans KR';
+    color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,108 +19,97 @@ body {
     max-width: 430px; 
     background-color: #ffffff;
     min-height: 100vh;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    overflow-x: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
 }
 
 .page {
-    padding: 50px 24px;
+    padding: 60px 30px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-bottom: 2px dashed #e1e4e8;
-    background-color: #ffffff;
+    text-align: center;
 }
 
 .section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 1.5px;
-    color: #0b1d33;
-    margin-bottom: 8px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #111111;
+    text-transform: uppercase;
 }
 
-.divider {
-    width: 35px;
-    height: 3px;
-    background-color: #002c5b; /* SBU Navy */
-    margin: 0 auto 35px auto;
+.line-divider {
+    width: 30px;
+    height: 0.5px;
+    background-color: #bbbbbb;
+    margin: 20px auto 40px auto;
 }
 
 .main-cover {
     padding: 0;
-    background-color: #002c5b;
-    color: #ffffff;
+    background-color: #ffffff;
 }
 
 .cover-image-wrapper {
-    height: 52vh;
-    background-color: #1a3d66;
+    height: 48vh;
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .photo-placeholder {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.8rem;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.4);
-    border: 2px dashed rgba(255,255,255,0.3);
-    padding: 20px 40px;
-    border-radius: 6px;
+    color: #999999;
+    border: 1px dashed #cccccc;
+    padding: 15px 30px;
 }
 
 .cover-content {
-    height: 48vh;
-    padding: 35px 25px;
+    height: 52vh;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
 }
 
 .institution {
     font-size: 0.85rem;
-    font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #9cbacf;
+    color: #555555;
 }
 
 .main-title {
-    font-size: 2.1rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin: 5px 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #002c5b;
 }
 
 .semester {
     font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: #f39c12;
+    letter-spacing: 3px;
+    color: #c49a45;
 }
 
 .event-info {
-    background: rgba(255, 255, 255, 0.07);
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
 }
 
 .info-item {
     font-size: 0.85rem;
-    margin: 4px 0;
-    font-weight: 400;
+    margin: 6px 0;
+    color: #444444;
+    letter-spacing: 1px;
 }
 
 .order-list {
     list-style: none;
     padding: 0;
-    nargub: 0 auto;
+    margin: 0 auto;
 }
 
 .order-list li {
@@ -129,176 +118,174 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .order-list .step {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #002c5b;
-    width: 35px;
-    border-right: 2px solid #f39c12;
-    margin-right: 15px;
-    padding-right: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #c49a45;
+    border-bottom: 1px solid #c49a45;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
 }
 
 .order-list .text {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.4;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
 }
 
 .order-list .text small {
     display: block;
-    color: #6a737d;
+    color: #777777;
     font-size: 0.75rem;
-    font-weight: 400;
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
-.mission-section {
-    background-color: #f7f9fc;
+.text-block {
+    margin-bottom: 35px;
 }
 
-.card-title {
+.block-title {
     font-size: 1.1rem;
     color: #002c5b;
-    margin-bottom: 12px;
-    font-weight: 700;
-    border-bottom: 1px solid #e1e4e8;
-    padding-bottom: 6px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.card p {
-    font-size: 0.8rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin-bottom: 12px;
-}
-.card p:last-child { margin-bottom: 0; }
-
-.anthem-box {
-    background: #fafafa;
-    padding: 22px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #eaeaea;
-}
-
-.anthem-box h4 {
+.vision-text {
     font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.anthem-box p {
-    font-size: 0.8rem;
     line-height: 1.6;
-    color: #555;
+    color: #444444;
+    font-style: italic;
 }
 
-.anthem-box .chorus {
-    margin-top: 8px;
-    font-weight: 500;
-    color: #111;
+.mission-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #444444;
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+.anthem-text-block {
+    padding: 10px 0;
+}
+
+.anthem-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #111111;
+    letter-spacing: 1px;
+}
+
+.anthem-text-block p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #444444;
+}
+
+.anthem-text-block .chorus {
+    margin-top: 10px;
+    color: #222222;
+}
+
+.sub-divider {
+    width: 15px;
+    margin: 25px auto;
+    opacity: 0.5;
 }
 
 .sub-school {
-    text-align: center;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #002c5b;
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.fit-theme .sub-school {
-    color: #e11b22; 
+.sub-school.fit-color {
+    color: #e11b22;
 }
-.fit-theme .name.summa { background-color: #e11b22; }
 
 .dept-group {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .dept-title {
-    font-size: 0.8rem;
-    color: #444;
-    font-weight: 700;
-    border-left: 3px solid #333;
-    padding-left: 8px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-}
-
-.name-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-}
-
-.name-grid.single-col {
-    grid-template-columns: 1fr;
-}
-
-.name {
-    background: #f1f3f6;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: #111111;
     font-weight: 500;
-    color: #333;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.dept-title span {
+    font-size: 0.8rem;
+    color: #666666;
+    font-style: italic;
+}
+
+.name-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 42px;
-    line-height: 1.2;
+    gap: 12px;
 }
 
-.font-small {
-    font-size: 0.72rem;
+.name-item {
+    font-size: 0.9rem;
+    color: #333333;
+    letter-spacing: 0.5px;
 }
 
-.name.honors {
-    color: #ffffff;
+.name-item small {
+    font-size: 0.78rem;
+    margin-left: 4px;
 }
 
-.name.summa { 
-    background-color: #c9a054; 
-} 
-.name.magna { 
-    background-color: #4f5d75; 
-} 
-.name.cum { 
-    background-color: #d1dbe5; 
-    color: #2c3e50;
+.name-item.summa {
+    color: #b08332;
+    font-weight: 600;
 }
 
-.name small {
-    font-size: 0.62rem;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-top: 3px;
+.name-item.summa-fit {
+    color: #e11b22;
+    font-weight: 600;
+}
+
+.name-item.magna {
+    color: #34495e;
+    font-weight: 600;
+}
+
+.name-item.cum {
+    color: #555555;
 }
 
 .footer {
-    text-align: center;
-    margin-top: auto;
-    padding-top: 40px;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
 }
 
-.footer p:first-child {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #555;
+.web-url {
+    font-size: 0.8rem;
+    color: #666666;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
-.footer p:last-child {
+.copyright {
     font-size: 0.7rem;
-    color: #999;
+    color: #999999;
+    letter-spacing: 0.5px;
 }
